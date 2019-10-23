@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     *{
+       margin: 0;
+       padding: 0;
+
+     }
+     ul li{
+       list-style: none;
+     }
+     li:nth-child(n){
+       background-color:red;
+     }
+     li:nth-child(2n)
+     {
+       background-color: green;
+     }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+  </ul>
+  <script>
+    function t(){
+      // var ullist = document.getElementsByTagName('ul');
+      var lilist = document.getElementsByTagName('li');
+      for(var i =0;i<lilist.length;i++)
+      {
+        (function(j){
+
+          lilist[j].addEventListener('click',function(){console.log(j)
+          })
+
+        })(i)
+        
+      }
+    }
+           
+  </script>
+
+</body>
+</html>
