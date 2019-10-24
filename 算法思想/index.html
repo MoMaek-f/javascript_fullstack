@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //函数声明，整体变量提升 
+  //变量     声明提升
+  //任何变量如果 没有经过声明就赋值，就会变成全局变量
+    //  一切声明的全局变量都归window所有 
+      function fn(a){
+   console.log(a)
+      var a = 123 
+   console.log(a)
+      function a(){}
+   console.log(a)
+      var b= function (){}
+   console.log(b)
+      function d(){}
+
+      }
+      fn(1)
+  </script>
+
+</body>
+</html>
