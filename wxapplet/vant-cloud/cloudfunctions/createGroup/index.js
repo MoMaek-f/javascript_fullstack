@@ -17,4 +17,14 @@ exports.main = async (event, context) => {
       updateTime:new Date()
     }
   })
+  .then(res=>{
+    return db.collection('user-group').add({
+      data:{
+        groupId:res._id,
+        userID:userInfo.openid,
+        invalid:false,
+        
+      }
+    })
+  })
 }
