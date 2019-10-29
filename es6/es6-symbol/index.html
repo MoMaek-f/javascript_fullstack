@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let a = Symbol()
+  let b = Symbol()
+  console.log(a===b);
+  var obj={
+    name: 'name',
+    [a]:'Symbol'
+  }
+  //对象 key支持 字符串 和Symbol
+//但是 Symbol 是不可列举的
+for(let key in obj){
+  console.log(key);
+}
+console.log(object.get)
+function getArea(shapName){
+  switch(shapName){
+    case 'sanjiao': return .5*10*5;
+    case 'chang': return 10*5;
+   } //魔法字符串
+}
+getArea('sanjiao');
+getArea('chang');
+  </script>
+
+</body>
+</html>
