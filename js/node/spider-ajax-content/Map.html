@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn"></button>
+  <script>
+     //Map
+     //key value
+     const btn = document.getElementById('btn');
+     var map={
+       name:'lihua',
+       [btn]:'dom node',
+     }
+     map['4a'] ='a val';
+     map['3b'] ='b val';
+     map['2c'] ='c val';
+     map['0d'] ='d val';
+     let map1= new Map([
+       ['key','value']
+     ])
+     console.log(Object.keys(map));
+     console.log(map1);
+     //有什么用
+     //为什么 es6 要增加一个Map
+     //1.以前的key 只支持字符串
+     //2.以前是无序的 现在是有序的
+    </script>
+</body>
+</html>
