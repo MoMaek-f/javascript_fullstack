@@ -182,23 +182,57 @@
     </li>
   </ul>
   <script>
-  //所有视频的 总时间
-  //类数组  通过query选择的通常是多个节点，数据类似数组但不是数组  通过数组索引获取值，有length长度
-  //Arrar.isArray()
-   const timeNodes = document.querySelectorAll('li');
-   console.log(timeNodes);
-   let a =[0,1,2,3,4,5];
-   console.log(a);
-   let total = 0;
-   for (let time of timeNodes){
-     let timeStr = time.dataset.time;
-     let timeArr = timeStr.split(':');   //split() //以什么分割
-     let [minute,secodes] = timeArr;
-     minute = parseInt(minute);
-     secodes = parseFloat(secodes);
-     total +=(minute * 60) + secodes;
-   }
-   console.log(total);
-  </script>
+    // function foo(a,b,c,d){
+    //     console.log(arguments,Array.isArray(arguments),arguments[0],arguments.length)
+    // }
+    // foo(1,2,3,4)
+//所有视频的 总秒数
+//类数组 通过数组的索引获取值 有 length 长度
+// //Array.isArray() 判断是否是数组
+const timeNodes = document.querySelectorAll('li');
+// // console.log(timeNodes,Array.isArray(timeNodes));
+// // let a = [0,1,2,4];
+// // console.log(a,Array.isArray(a));
+
+let total = 0;
+for(let time of timeNodes){
+    let timeStr = time.dataset.time;
+    let timeArr = timeStr.split(':');
+    console.log(timeArr);
+    let [minute,secodes] = timeArr;
+    minute = parseInt(minute);
+    secodes = parseFloat(secodes);
+    total += (minute * 60) + secodes;
+}
+console.log(total);
+
+
+let timeHourSecond = Array.from(timeNodes).map(node => {
+    let timeStr = node.dataset.time;
+    let timeArr = timeStr.split(':');
+    let [minute,secodes] = timeArr;
+    minute = parseInt(minute);
+    secodes = parseFloat(secodes);
+    total += (minute * 60) + secodes;
+});
+const totalSecondes = timeHourSecond.reduce((a,b) => a + b);
+console.log(timeHourSecond);
+
+//reduce一次拿两个值
+let arr1 = [3,4,5,6];
+arr1.reduce((pre, next) => {
+    console.log(pre, next);
+    return pre + next;
+})
+let arr2 = [{key: 3},{key: 4},{key: 5}]
+//{key: 12}
+let arr2Res = arr2.reduce((a,b) =>{
+    console.log(a,b);
+    return ({
+        key: a.key +b.key
+    })
+})
+</script>
+
 </body>
 </html>
