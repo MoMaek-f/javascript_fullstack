@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="goods">
-      <div class="menu-wrapper">
+      <div class="menu-wrapper" ref="menuWrapper">
         <ul>
           <li v-for="(item,index) in goods" :key="index" class="menu-item">
             <span class="text border-1px">
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 export default {
   data () {
     return {
@@ -30,8 +31,20 @@ export default {
     this.$http.get('http://localhost:8080/static/goods.json')
       .then((res) => {
         console.log(res)
-        this.goods = res.data.data
+        if (res.data.errno === 0) {
+          this.goods = res.data.data
+          this.$nextTick(() => {
+            this._initScroll()
+          })
+        }
       })
+  },
+  methods: {
+    _initScroll () {
+      this.menuScroll = new BScroll(this.$refs.menuWrapper, {
+        click: true
+      })
+    }
   }
 }
 </script>
