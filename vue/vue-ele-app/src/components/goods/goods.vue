@@ -39,20 +39,25 @@
         </ul>
       </div>
     </div>
+    <!-- 购物车 -->
+    <shopcart></shopcart>
   </div>
 </template>
 
 <script>
 import BScroll from 'better-scroll'
+import shopcart from '@/components/shopcart/shopcart.vue'
 export default {
   data () {
     return {
       goods: [1, 2, 3, 4, 5, 6, 7, 8, 9],
       classMap: ['decrease', 'discount', 'special', 'invoice', 'guarantee'],
-      currentIndex: [0],
       listHeight: [],
       scrollY: 0
     }
+  },
+  components: {
+    shopcart
   },
   created () {
     this.$http.get('http://localhost:8080/static/goods.json')
@@ -65,6 +70,18 @@ export default {
           })
         }
       })
+  },
+  computed: {
+    currentIndex () {
+      for (let i = 0; i < this.listHeight.length; i++) {
+        let height1 = this.listHeight[i]
+        let height2 = this.listHeight[i + 1]
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          return i
+        }
+      }
+      return 0
+    }
   },
   methods: {
     _initScroll () {
@@ -81,7 +98,7 @@ export default {
       })
     },
     selectMenu (idx) {
-      this.currentIndex = idx
+      // this.currentIndex = idx
       let foodList = this.$refs.foodList
       let el = foodList[idx]
       this.foodsScroll.scrollToElement(el, 300)
