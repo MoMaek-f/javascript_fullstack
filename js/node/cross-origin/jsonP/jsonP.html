@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getBook(res) {
+      console.log('得到请求结果', res);
+    }
+  </script>
+  <script src="http://localhost:3000/api/getBook"></script>
+  <script>
+  var obj = {
+    a : 1
+   }//console.log 可能是异步 惰性的
+   console.log(obj);
+   console.log(obj.b);
+   setTimeout(() => {
+     obj.b = 123
+   }, 10);
+  </script>
+</body>
+</html>
