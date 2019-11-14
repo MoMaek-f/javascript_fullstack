@@ -57,7 +57,7 @@
             </div>
           </div>
         </div>
-        <div class="detail-close" @click="detailHide">
+        <div class="detail-close" @click="hideDetail">
           <i class="icon-close"></i>
         </div>
       </div>
@@ -85,7 +85,7 @@ export default {
     detailShow () {
       this.showDetail = true
     },
-    detailHide () {
+    hideDetail () {
       this.showDetail = false
     }
   }
@@ -277,14 +277,15 @@ export default {
             .text
               line-height 16px
               font-size 12px
-      .bulletin
-        width 80%
-        margin 0 auto
-        .content
-          padding 0 12px
-          line-height 24px
-          font-size 12px
+        .bulletin
+          width 80%
+          margin 0 auto
+          .content
+            padding 0 12px
+            line-height 24px
+            font-size 12px
     .detail-close
+      position relative
       width 32px
       height 32px
       margin -64px auto 0 auto

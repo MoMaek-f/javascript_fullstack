@@ -11,14 +11,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/apis':{
-        target: 'http://ustbhuangyi.com/sell/',  // 后台api
-        changeOrigin: true,  //是否跨域
-        // secure: true,
-        pathRewrite: {
-          '^/api': ''   //需要rewrite的,
-        }
-      }
     },
 
     // Various Dev Server settings
