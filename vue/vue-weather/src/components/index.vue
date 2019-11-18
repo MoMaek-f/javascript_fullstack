@@ -2,7 +2,7 @@
   <div class="contaner">
     <div class="bg"></div>
     <div class="address">
-      <span class="change-city">切换城市</span>
+      <span class="change-city" @click="changeCity">切换城市</span>
       <p style="height: 21px">{{localTime}}</p>
       <div class="city-info">
         <dl>
@@ -55,8 +55,13 @@
       </div>
     </div>
 
-    <div class="select-city-box">
-      <van-area :area-list="areaList" :columns-num="2" title="选择城市"/>
+    <div class="select-city-box" v-show="citybox">
+      <van-area 
+      :area-list="areaList" 
+      :columns-num="2" 
+      title="选择城市" 
+      @cancel="cancel"
+      @confirm="complete"/>
     </div>
   </div>
 </template>
@@ -71,7 +76,8 @@ export default {
       cityData: {},
       futureTem: [],
       seriesData: [],
-      areaList: AreaList
+      areaList: AreaList,
+      citybox: false
     };
   },
   created() {
@@ -183,6 +189,19 @@ export default {
         ]
       };
       myChart.setOption(option, true)
+    },
+    changeCity () {
+      this.citybox = true
+    },
+    cancel () {
+      this.citybox = false
+    },
+    complete (val) {
+      console.log(val)
+      this.seriesData = []
+      this.getCurrentCityData(val[1].name)
+      this.cancel()
+      
     }
   }
 };
@@ -273,8 +292,6 @@ export default {
 .contaner {
   width: 100vw;
   height: 100vh;
-        height: 100vh;       
-  height: 100vh;
   position: relative;
   padding: 10px;
   overflow: hidden;
@@ -282,8 +299,6 @@ export default {
 }
 .contaner .bg {
   width: 100%;
-  height: 100%;
-        height: 100%; 
   height: 100%;
   position: absolute;
   left: 0;
@@ -294,8 +309,6 @@ export default {
   z-index: -1;
 }
 .contaner .address {
-  color: #fff;
-       color: #fff;        
   color: #fff;
 }
 .contaner .address .change-city {
@@ -336,5 +349,4 @@ export default {
   left: 0;
   bottom: 0;
 }
-
 </style>
