@@ -95,27 +95,27 @@ export default {
           this.$emit('scroll', pos)
         })
       }
-            //派发上拉加载更多
+
+      // 派发上拉加载更多
       if (this.pullup) {
-        this.scroll.on('scrollEnd', () =>{
-          if (this.scroll.y <= (thsi.scroll.maxScrollY + 50)){
+        this.scroll.on('scrollEnd', () => {
+          if (this.scroll.y <= (this.scroll.maxScrollY + 50)) {
             this.$emit('scrollToEnd')
           }
         })
       }
-         //派发下拉刷新
+      // 派发下啦刷新
       if (this.pulldown) {
-        this.scroll.on('touchend',() => {
+        this.scroll.on('touchend', (pos) => {
           if (pos.y > 50) {
             this.$emit('pulldown')
           }
         })
       }
-
-      //是否派发列表滚动开始事件
+      // 是否派发列表滚动开始事件
       if (this.beforeScroll) {
-        this.scroll.on('beforeScrollStart',() =>{
-          this.$emit ('beforeScroll')
+        this.scroll.on('beforeScrollStart', () => {
+          this.$emit('beforeScroll')
         })
       }
     },

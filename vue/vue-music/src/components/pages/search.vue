@@ -26,17 +26,15 @@
               </span>
             </h1>
             <!-- 搜索历史列表 -->
-            <v-search-list :searches="searchHistory" @select="saveSearch" @delete="deleSearchHistory"></v-search-list>
+            <v-search-list :searches="searchHistory" @select="saveSearch" @delete="deleteSearchHistory"></v-search-list>
           </div>
         </div>
       </v-scroll>
     </div>
-    <!-- 搜索结果 -->
-      <div class="search-result" v-show="query">
-        <v-suggest @query="query">
-
-        </v-suggest>
-      </div>
+    <!-- 搜索result -->
+    <div class="search-result" v-show="query">
+      <v-suggest :query="query" @select="saveSearch" @listScroll="blurInput" ref="suggest"></v-suggest>
+    </div>
   </div>
 </template>
 
@@ -48,26 +46,25 @@ import api from '@/api'
 import { mapGetters } from 'vuex'
 import { searchMixin } from '@/common/mixin'
 import suggest from '@/components/suggest'
-
 export default {
   data () {
     return {
       shortcut: [],
-      hotKey: [],
-      
+      hotKey: []
     }
   },
   components: {
     'v-search-box': searchBox,
     'v-scroll': scroll,
-    'v-search-list': searchList
+    'v-search-list': searchList,
+    'v-suggest': suggest
   },
   computed: {
     ...mapGetters([
       'searchHistory'
     ])
   },
-  mixins:[searchMixin],
+  mixins: [searchMixin],
   methods: {
     _getHotKey () {
       api.HotSearchKey().then((res) => {
@@ -82,6 +79,7 @@ export default {
   }
 }
 </script>
+
 
 <style lang="stylus" scoped>
 @import '../../assets/css/function'
@@ -126,9 +124,9 @@ export default {
             .icon
               font-size 18px
               color hsla(0, 0%, 100%, 0.3)
-  .search-result
+  .search-reasult
     position fixed
     width 100%
     top px2rem(360px)
-    buttom 0
+    bottom 0
 </style>

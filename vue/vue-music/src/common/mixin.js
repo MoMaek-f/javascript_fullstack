@@ -1,26 +1,44 @@
-import {mapActions} from 'vuex'
-export const searchMixin ={
-    data () {
-        return {
-            query: ''
-        }
-    },
-    methods: {
-        onQueryChange (query) {
-            this.query = query.trim()
-            //看效果用的代码
-       
-        },
-        blurInput () {
-            this.$ref.searchBox.blur()
-        },
-        saveSearch (song) {
-            this.$ref.searchBox.setQuery(song)
-            this.saveSearchHistory(this.query)
-        },
-        ...mapActions([
-            'saveSearchHistory',
-            'deleteSearchHistory'
-        ])
+import { mapActions, mapGetters } from 'vuex'
+
+export const searchMixin = {
+  data () {
+    return {
+      query: ''
     }
+  },
+  methods: {
+    onQueryChange (query) {
+      this.query = query.trim()
+    },
+    blurInput () {
+      this.$refs.searchBox.blur()
+    },
+    saveSearch (song) {
+        console.log(song)
+      // this.$refs.searchBox.setQuery(song)
+      this.saveSearchHistory(this.query)
+      this.selectPlaySong(song)
+      // 为了看效果
+      this.addPlayList(song)
+    },
+    ...mapActions([
+      'addPlayList',
+      'selectPlaySong',
+      'saveSearchHistory',
+      'deleteSearchHistory',
+      'clearSearchHistory'
+    ])
+  }
+}
+
+export const playerMixin = {
+  computed: {
+    ...mapGetters([
+      'currentSong',
+      'playList'
+    ])
+  },
+  methods: {
+
+  }
 }
