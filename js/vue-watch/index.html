@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="" id="app">hello world</div>
+  <button onclick="btn1()">click1</button>
+  <button onclick="btn2()">click2</button>
+  <script>
+     let vn = new watcher({
+       data: {
+         inner: ''
+       },
+       watch: {
+         inner (newVal,oldVal) {
+           document.getElementById('app').innerHTML = newVal
+         }
+       }
+     })
+  function btn1() {
+    vm.inner = 'hi'
+  }
+  function btn2() {
+    vm.inner = 'hello'
+  }
+  </script>
+  <script src="./watcher.js"></script>
+</body>
+</html>
