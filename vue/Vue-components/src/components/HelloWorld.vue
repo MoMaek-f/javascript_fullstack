@@ -18,6 +18,11 @@ export default {
   },
   components: {
     'i-button': button
+  },
+  methods: {
+    showToast () {
+      
+    }
   }
 }
 </script>

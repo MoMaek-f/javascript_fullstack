@@ -3,6 +3,9 @@
     <slot>
             
     </slot>
+    <slot>
+            
+    </slot>
   </button>
 </template>
 
