@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let data = {
+      name: 123
+    }
+    this.name = 456;
+    //模板 要知道 name 什么时候被改了
+
+
+    //第三个参数 数据描述符
+    Object.defineProperty(data, 'sex', {
+      enumerable: false,
+      writable: false,
+      value: '男'
+    })
+    data.sex = '女'
+    for (let key in data) {
+      console.log(key);
+    }
+    let data1 = {
+      name1 ='name1'
+    }
+    //defineProperty 定义属性: value 2: get/set
+    Object.defineProperty(data, 'name', {
+      get: function () { 
+        return data._name1;
+      },
+      set: function (value) { 
+        console.log('改变了，重新渲染一次')
+        data._name1 = value
+      }
+    })
+    let data3 ={
+      list: [1,2,3,4]
+    }
+    data3.data.push(5); //怎么知道数组被改变了
+  </script>
+</body>
+
+</html>

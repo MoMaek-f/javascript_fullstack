@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <script>
+     let arr = [1,2,3,4,5];
+     //劫持
+     //1 利用数组的api push shift ...
+     //2 arr[0]=
+     arr.push(6) //会引发页面刷新
+     arr[6] = 6  //不会引发页面刷新
+     //存住以前的push
+     let originPush = Array.prototype.push
+    // 数组调用push的时候 调用到这里
+     Array.prototype.push = function (...args) {
+       console.log('数组改变了')
+      //  originPush()
+       originPush.apply(this,args)
+     }
+     arr.push(7);
+     console.log(arr)
+    </script>
+</body>
+</html>
