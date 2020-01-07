@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>this is my blog</h1>
-    <BlogPost></BlogPost>
+    <BlogPost :post="blogPost"></BlogPost>
     <router-view/>
   </div>
 </template>
@@ -15,7 +15,15 @@ import { Component,Vue } from "vue-property-decorator";
   }
 })
 export default class App extends Vue {
-
+  private blogPost =[
+    {
+      title: 'my blog',
+      body:'welcome',
+      author: 'fl',
+      data: new Date(2020,0,7)
+    }
+  ]
+  
 }
 </script>
 <style lang="stylus">
