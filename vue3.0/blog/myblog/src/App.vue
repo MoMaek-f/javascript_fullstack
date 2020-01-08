@@ -3,11 +3,24 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
+      <Nav></Nav>
     </div>
     <router-view />
   </div>
 </template>
+<script lang="ts">
+import {Vue,Component} from 'vue-property-decorator'
+import Nav from "@components/Nav.vue"
+@Component({
+  components: {
+    Nav
+  }
+})
 
+export default class App extends Vue{
+  
+}
+</script>
 <style lang="less">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
