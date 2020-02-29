@@ -94,9 +94,9 @@ let baseWebpackConfig = {
           name: utils.assetsPath('fonts/[name].[ext]')
         }
       },
-      { test: /.less$/, loader: "style-loader!css-loader!less-loader" }
+      { test: /.less$/,loader: "style-loader!css-loader!less-loader" }
     ]
-  },
+  }, 
   plugins: [
     // api 统一桥协议方案
     new webpack.DefinePlugin({

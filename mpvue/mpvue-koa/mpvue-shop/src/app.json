@@ -2,12 +2,14 @@
   "pages": [
     "pages/index/main",
     "pages/topic/main",
-    "pages/category/main",
     "pages/cart/main",
+    "pages/cartgory/main",
     "pages/my/main",
     "pages/mappage/main"
+    
   ],
   "window": {
+    "backgroundColor":"#fafafa",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "网易严选",
@@ -18,6 +20,7 @@
     "backgroundColor": "#fafafa",
     "selectedColor": "#b4282d",
     "borderStyle": "white",
+
     "list": [
       {
         "pagePath": "pages/index/main",
@@ -25,29 +28,29 @@
         "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
         "text": "首页"
       },
-      {
+      { 
         "pagePath": "pages/topic/main",
         "iconPath": "static/images/ic_menu_topic_nor.png",
         "selectedIconPath": "static/images/ic_menu_topic_pressed.png",
-        "text": "专题"
+        "text":"专题"
       },
-      {
-        "pagePath": "pages/category/main",
+      { 
+        "pagePath": "pages/cartgory/main",
         "iconPath": "static/images/ic_menu_sort_nor.png",
         "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
-        "text": "分类"
+        "text":"分类"
       },
-      {
+      { 
         "pagePath": "pages/cart/main",
-        "iconPath": "static/images/ic_menu_shoping_nor.png",
-        "selectedIconPath": "static/images/ic_menu_shoping_pressed.png",
-        "text": "购物车"
+        "iconPath": "static/images/ic_menu_topic_nor.png",
+        "selectedIconPath": "static/images/ic_menu_topic_pressed.png",
+        "text":"购物车"
       },
-      {
+      { 
         "pagePath": "pages/my/main",
         "iconPath": "static/images/ic_menu_me_nor.png",
         "selectedIconPath": "static/images/ic_menu_me_pressed.png",
-        "text": "我的"
+        "text":"我的"
       }
     ],
     "position": "bottom"
