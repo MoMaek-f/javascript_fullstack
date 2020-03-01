@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/mappage/main",
     "pages/index/main",
     "pages/topic/main",
     "pages/cart/main",
     "pages/cartgory/main",
-    "pages/my/main",
-    "pages/mappage/main"
+    "pages/my/main"
+    
     
   ],
   "window": {

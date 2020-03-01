@@ -47,4 +47,28 @@ export default {
   -webkit-transition: width 2s;
   -o-transition: width 2s;
 }
+page{
+  background: #f4f4f4;
+  height: 100%;
+}
+button{
+  background: none;
+  padding: 0;
+  font-weight: normal;
+  font-style: 32rpx;
+  box-sizing: border-box;
+}
+button::after{
+  border:0;
+}
+view,text{
+  font-size: 28rpx;
+  color: #333333;
+}
+.wxParse .p{
+  margin: 0 !important;
+}
+.wxParse .png{
+  display: block !important;
+}
 </style>
