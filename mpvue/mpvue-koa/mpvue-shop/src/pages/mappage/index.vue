@@ -13,7 +13,6 @@
       <div class="title">显示当前位置</div>
       <map class="map" id="map" scale="16" :longitude="longitude" :latitude="latitude" :markers="markers"></map>
     </div>
-
   </div>
 </template>
 
