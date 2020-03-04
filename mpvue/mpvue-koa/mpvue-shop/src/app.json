@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/mappage/main",
     "pages/index/main",
+    "pages/mappage/main",
     "pages/topic/main",
     "pages/cart/main",
     "pages/cartgory/main",
