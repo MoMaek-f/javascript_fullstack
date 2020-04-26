@@ -4,7 +4,7 @@
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
           <li 
-          v-for="(item, index) in goods" 
+          v-for="(item, index) in goods"
           :key="index"
           class="menu-item"
           @click="selectMenu(index)"
