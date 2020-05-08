@@ -13,8 +13,8 @@ class Header extends Component {
           <NacSearch></NacSearch>
         </Nav>
         <Addition>
-          <Button>写文章</Button>
-          <Button>注册</Button>
+          <Button className="writting">写文章</Button>
+          <Button className="reg">注册</Button>
         </Addition>
       </HeaderWrapper>
     ) 

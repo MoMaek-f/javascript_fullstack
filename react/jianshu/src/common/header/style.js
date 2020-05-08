@@ -63,12 +63,19 @@ export const Addition = styled.div`
   height: 56px;
 `
 export const Button = styled.div`
-border: 1px solid rgba(236,97,73,0.7);
-float: right;
-line-height: 38px;
-border-radius: 19px;
-margin-top: 9px;
-margin-right: 20px;
-padding: 0 20px;
-
+  border: 1px solid rgba(236,97,73,0.7);
+  float: right;
+  line-height: 38px;
+  border-radius: 19px;
+  margin-top: 9px;
+  margin-right: 20px;
+  padding: 0 20px;
+  font-size: 14px;
+  &.reg {
+    color: #ec6149;
+  }
+  &.writting {
+    color: #fff;
+    background: #ec6149;
+  }
 `
