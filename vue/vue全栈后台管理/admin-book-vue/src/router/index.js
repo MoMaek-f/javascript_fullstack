@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-05-19 01:08:14
+ * @LastEditTime: 2020-05-25 22:17:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue全栈后台管理\admin-book-vue\src\router\index.js
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -54,12 +62,26 @@ export const constantRoutes = [
 ]
 
 export const asyncRoutes = [
+  {
+    path: '/book',
+    component: Layout,
+    redirect: '/book/create',
+    meta: { title: '图书管理', icon: 'documentation', roles: ['admin'] },
+    children: [
+      {
+        path: '/book/create',
+        component: () => import('@/views/book/create'),
+        meta: { title: '上传图书', icon: 'edit', roles: ['admin'] }
+      }
+    ]
+  },
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  // mode: 'history', // require service support-
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
