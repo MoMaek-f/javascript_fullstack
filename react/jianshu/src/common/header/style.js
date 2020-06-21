@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-04-27 01:55:27
+ * @LastEditTime: 2020-06-11 14:47:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue全栈后台管理d:\Coding\javascript_fullstack\react\jianshu\src\common\header\style.js
+ */ 
 import styled from 'styled-components'
 import logoPic from '../../statics/logo.png'
 export const HeaderWrapper = styled.div`
