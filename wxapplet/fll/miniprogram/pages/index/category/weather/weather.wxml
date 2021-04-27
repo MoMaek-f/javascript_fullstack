@@ -1,0 +1,43 @@
+<view>
+  <view class="header" bindtap="selectCity">
+    <view class="city-list">
+      <view class="header-city header-city-left">
+    {{topcity.left}}
+     </view>
+      <view class="header-city header-city-center">
+    {{topcity.center}}南昌
+      </view>
+      <view class="header-city header-city-right">
+    {{topcity.right}}
+      </view>
+    </view>
+  </view>
+
+
+<swiper>
+  <block>
+    <swiper-item>
+      <scroll-view>
+<view class="today" bindtap="showDetailPage">
+<view class="weather">
+ <image class="pic" src="../../../../images/weather-icon/{{weatherData.cond_code}}.png"></image>
+            <view class="desc">
+                <text>{{weatherData.cond_txt}}</text>
+                <text>{{weatherData.wind_dir}}{{weatherData.wind_sc}}级</text>
+              </view>
+            </view>
+            <view class="temperature">
+                <text>{{weatherData.tmp}}°C</text>
+              </view>
+            <view class="more">
+              <text>湿度:{{weatherData.hum}}%|  </text>
+              <text>PM2.5: | </text>
+              <text>空气质量: </text>
+            </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+
+</view>

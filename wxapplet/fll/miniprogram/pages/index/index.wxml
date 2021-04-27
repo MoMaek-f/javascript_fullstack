@@ -1,0 +1,30 @@
+<!--miniprogram/pages/weather/weather.wxml-->
+<swiper class="header" indicator-dots="true" autoplay="true" interval="3000" circular="true">
+  <swiper-item>
+    <image src="../../images/nav1.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="../../images/nav2.jpg"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="../../images/nav3.jpg"></image>
+  </swiper-item>
+</swiper>
+<swiper class="list" indicator-dots="true">
+  <swiper-item class="page1">
+    <block wx:for="{{navs}}" wx:key="{{index}}">
+      <view class="navbox" data-alias="{{ item.alias }}" bindtap="switchtap">
+        <image class="navimg" src="{{item.navimg}}"></image>
+       <view><text class="navtext">{{item.navtext}}</text></view> 
+      </view>
+    </block>
+  </swiper-item>
+  <swiper-item class="page2">
+   <block wx:for="{{navs2}}" wx:key="{{index}}">
+      <view class="navbox" data-alias="{{ item.alias }}" bindtap="switchtap">
+        <image class="navimg" src="{{item.navimg}}"></image>
+       <view><text class="navtext">{{item.navtext}}</text></view> 
+      </view>
+    </block>
+  </swiper-item>
+</swiper>

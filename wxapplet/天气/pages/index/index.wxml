@@ -1,0 +1,43 @@
+<view>
+  <view class="header" bindtap="selectCity">
+    <view class="city-list">
+      <view class="header-city header-city-left">
+    南昌
+     </view>
+      <view class="header-city header-city-center">
+    九江
+      </view>
+      <view class="header-city header-city-right">
+    北京
+      </view>
+    </view>
+  </view>
+
+
+<swiper>
+  <block>
+    <swiper-item>
+      <scroll-view>
+<view class="today" bindtap="showDetailPage">
+<view class="weather">
+ <image class="pic" src="{{ weatherData[cityCode].realtime.weather.pic }}"></image>
+            <view class="desc">
+                <text>{{weatherData.HeWeather6[0].now.cond_txt}}</text>
+                <text>{{}}</text>
+              </view>
+            </view>
+            <view class="temperature">
+                <text>°</text>
+              </view>
+            <view class="more">
+              <text>湿度: </text>
+              <text>PM2.5:</text>
+              <text></text>
+            </view>
+          </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>
+
+</view>

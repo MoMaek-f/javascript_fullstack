@@ -1,0 +1,4 @@
+<!--miniprogram/pages/index/page/jianjie/jianjie.wxml-->
+<swiper>
+ <swiper-item></swiper-item>
+</swiper>

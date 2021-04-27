@@ -1,0 +1,24 @@
+<view> 
+  <scroll-view class="container" scroll-y="true" scroll-with-animation="true">
+    <view class="city-selected">
+      <view class="item" wx:for="{{citySelected}}" wx:key="dayIdx" >
+        <view class="name">{{city}}</view>
+        <image class="pic" src="{{pic}}"></image>
+        <view class="desc" >
+          <text>{{weatherData.HeWeather6[0].now.cond_txt}}</text>
+          <text>{{weatherData.HeWeather6[0].now.wind_dir}}{{weatherData.HeWeather6[0].now.wind_spd}}级</text>
+        </view>
+        <view class="temperature">
+          <text>{{weatherData.HeWeather6[0].now.tmp}}°C</text>
+        </view>
+        <view class="remove"><icon type="cancel" size="15"  bindtap="removeCity"  data-city_code="{{ cityCode }}" /></view>
+      </view>
+      <picker mode="region" bindchange="addCity" value="{{region}}">
+      <view class="item add">
+          <text>+ 添加城市</text>
+      </view>
+      </picker>
+    </view>
+  </scroll-view>
+</view>
+
